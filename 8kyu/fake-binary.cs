@@ -1,23 +1,18 @@
-/*
-Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
-
-Note: input will never be an empty string
-*/
-
-// My solution
-
 public class Kata
 {
   public static string FakeBin(string x)
-  {
-    int n = 0;
-      
-      if (n>5){
-        return "0";
-      } 
-      
-      if (n<5){
-        return "1";
-      }
-  }
+  {   
+    for ( var i = 0; i < x.Length; i++ )
+        {
+          if ( x[i] < 5 )
+          {
+            x[i] = 0;
+          }
+          else if ( x[i] > 5 )
+          {
+            x[i] = 1;
+          } 
+          return x;
+        }
+}
 }
