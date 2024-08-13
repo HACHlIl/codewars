@@ -1,28 +1,26 @@
 /*
-Complete the function that takes a non-negative integer n as input, and returns a list of all the powers of 2 with the exponent ranging from 0 to n ( inclusive ).
-Examples
+You were camping with your friends far away from home, but when it's time to go back, you realize that your fuel is running out and the nearest pump is 50 miles away! You know that on average, your car runs on about 25 miles per gallon. There are 2 gallons left.
 
-n = 0  ==> [1]        # [2^0]
-n = 1  ==> [1, 2]     # [2^0, 2^1]
-n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+Considering these factors, write a function that tells you if it is possible to get to the pump or not.
+
+Function should return true if it is possible and false if not.
 */
 
 // My solution
 
-using System.Numerics;
 using System;
-using System.Collections.Generic;
 
-public class Kata
+public static class Kata
 {
-  public static BigInteger[] PowersOfTwo(int n)
+  public static bool ZeroFuel(uint distanceToPump, uint mpg, uint fuelLeft)
   {
-    List<BigInteger> allPowers = new List<BigInteger>();
-    for (int i = 0; i <= n; i++)
+    if (distanceToPump <= (mpg * fuelLeft))
     {
-      BigInteger power = BigInteger.Pow(2, i);
-      allPowers.Add(power);
+      return true;
     }
-    return allPowers.ToArray();
+    else
+    {
+      return false;
+    }
   }
 }
