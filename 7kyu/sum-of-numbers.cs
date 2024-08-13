@@ -14,22 +14,20 @@ Examples (a, b) --> output (explanation)
 Your function should only return a number, not the explanation about how you get that number.
 */
 
-//My solution
+// My solution
 
-  using System;
-  public class Sum
-  {
-     public int GetSum(int a, int b)
-     {
-        int c = a + b; 
+using System;
+
+public class Sum
+{
+    public int GetSum(int a, int b)
+    {
+        int min = Math.Min(a, b);
+        int max = Math.Max(a, b);
+                
+        int numbers = max - min + 1;
+        int sum = numbers * (min + max) / 2;
         
-        if (a == b)
-        {
-            return a; 
-        }
-        else 
-        {
-            return c;
-        }
-     }
-  }
+        return sum;
+    }
+}
