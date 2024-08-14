@@ -8,24 +8,24 @@ Examples:
 "This is another test" --> "This is rehtona test"
 */
 
-// My unfishing solution
+// My solution
 
-using System.Collections.Generic;
-using System.Linq;
 using System;
+using System.Linq;
 
 public class Kata
 {
-  public static string SpinWords(string sentence)
-  {
-   string[] words = sentence.Split(' ');
-   
-    for (int i = 0; i < sentence.Length; i++)
+    public static string SpinWords(string sentence)
     {
-      if (words[i].Length >= 5)
-      {
-        
-      } 
+        string[] words = sentence.Split(' ');
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length >= 5)
+            {
+                words[i] = new string(words[i].Reverse().ToArray());
+            }
+        }
+        return string.Join(" ", words);
     }
-  }
 }
